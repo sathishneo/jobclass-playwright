@@ -1,0 +1,25 @@
+{
+  "jobSeeker": {
+    "name": "ram",
+    "email": "ram@gmail.com",
+    "password": "123456",
+    "phone": "9123456789",
+    "country": "India",
+    "userType": "Job seeker",
+    "gender": "Mr",
+    "resume": "sampleResume.pdf"
+  },
+  "employer": {
+    "name": "sinduja",
+    "email": "sindu@gmail.com",
+    "password": "123456",
+    "phone": "9876543210",
+    "country": "India",
+    "userType": "Employer",
+    "gender": "Mr"
+  },
+  "invalidUser": {
+    "email": "invalid@example.com",
+    "password": "WrongPassword"
+  }
+}

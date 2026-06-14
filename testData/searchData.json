@@ -1,0 +1,10 @@
+{
+  "validSearch": {
+    "keyword": "Software Engineer",
+    "location": "Bangalore"
+  },
+  "invalidSearch": {
+    "keyword": "",
+    "location": ""
+  }
+}

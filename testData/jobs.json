@@ -1,0 +1,45 @@
+{
+  "validJob": {
+    "title": "Software Engineer",
+    "description": "Looking for a skilled software engineer.",
+
+    "category": "IT & Telecoms",
+    "jobType": "Full-time",
+
+    "location": "Karnataka",
+    "subLocation": "Bangalore Urban",
+    "city": "Bengaluru",
+
+    "salaryMin": "500000",
+    "salaryMax": "800000",
+
+    "companyName": "Test Company",
+    "companyDescription": "A test company for job posting.",
+    "website": "https://example.com",
+    "phone": "9876543210"
+  },
+
+  "invalidJob": {
+    "title": "",
+    "description": "",
+
+    "category": "",
+    "jobType": "",
+
+    "location": "",
+    "subLocation": "",
+    "city": "",
+
+    "salaryMin": "",
+    "salaryMax": "",
+
+    "companyName": "",
+    "companyDescription": "",
+
+    "website": "",
+
+    "contactName": "",
+    "contactEmail": "",
+    "phone": ""
+  }
+}
