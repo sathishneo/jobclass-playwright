@@ -2,7 +2,7 @@
 class HomePage {
   constructor(page) {
     this.page = page;
-    this.searchInput = page.getByRole('textbox', { name: 'What ?' })
+    this.searchInput = page.getByPlaceholder("What ?")
     this.locationInput = page.getByRole('textbox', { name: /Where \?/i })
     this.searchButton = page.locator('//button[@class="btn btn-primary btn-search btn-block"]')
     this.postJobButton = page.getByRole('link', { name: 'Post a Job' })
@@ -17,7 +17,7 @@ class HomePage {
     await this.page.waitForLoadState('networkidle');
   }
 
-async searchJob(keyword, location = '') {
+async searchJob(keyword, location) {
   await this.searchInput.fill(keyword);
 
   if (location) {

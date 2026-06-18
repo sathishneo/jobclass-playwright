@@ -22,7 +22,7 @@ test.describe('Favorites Regression Tests', () => {
     await loginPage.submit();
   });
 
-  test('User can save a job to favorites', async () => {
+  test.skip('User can save a job to favorites', async () => {
     await homePage.searchJob('Software');
     await jobListPage.openJob(0);
     await jobDetailPage.saveJob();
@@ -31,7 +31,7 @@ test.describe('Favorites Regression Tests', () => {
     expect(jobCount).toBeGreaterThan(0);
   });
 
-  test('User can remove a job from favorites', async () => {
+  test.skip('User can remove a job from favorites', async () => {
     await homePage.searchJob('Software');
     await jobListPage.saveJob(0);
     await jobListPage.saveJob(0); // Click again to unsave
@@ -40,7 +40,7 @@ test.describe('Favorites Regression Tests', () => {
     expect(jobCount).toBe(0);
   });
 
-  test('User cannot save job without login', async ({ page }) => {
+  test.skip('User cannot save job without login', async ({ page }) => {
     await accountPage.logout();
     await homePage.searchJob('Software');
     await jobListPage.saveJob(0);

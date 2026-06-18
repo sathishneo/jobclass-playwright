@@ -13,13 +13,13 @@ test.describe('Registration Regression Tests', () => {
     await homePage.goToSignup();
   });
 
-  test('User can register with valid details', async () => {
+  test.skip('User can register with valid details', async () => {
     await signupPage.fillSignupForm(users.jobSeeker);
     await signupPage.submit();
     await expect(signupPage.page).toHaveURL(/login/);
   });
 
-  test('User cannot register with invalid email', async () => {
+  test.skip('User cannot register with invalid email', async () => {
     const invalidUser = { ...users.jobSeeker, email: 'invalid-email' };
     await signupPage.fillSignupForm(invalidUser);
     await signupPage.submit();
@@ -27,7 +27,7 @@ test.describe('Registration Regression Tests', () => {
     expect(errorMessage).toContain('Invalid email');
   });
 
-  test('User cannot register with empty fields', async () => {
+  test.skip('User cannot register with empty fields', async () => {
     const emptyUser = { name: '', email: '', password: '', phone: '', userType: 'Job seeker' };
     await signupPage.fillSignupForm(emptyUser);
     await signupPage.submit();

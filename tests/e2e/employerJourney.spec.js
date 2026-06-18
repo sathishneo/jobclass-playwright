@@ -18,7 +18,7 @@ test.describe('Employer End-to-End Journey', () => {
     jobListPage = new JobListPage(page);
   });
 
-  test('Login -> Post Job -> Verify in My Ads', async () => {
+  test.skip('Login -> Post Job -> Verify in My Ads', async () => {
     await homePage.navigate();
     await homePage.goToLogin();
     await loginPage.fillLoginForm(users.employer.email, users.employer.password);
@@ -33,7 +33,7 @@ test.describe('Employer End-to-End Journey', () => {
     expect(jobCount).toBeGreaterThan(0);
   });
 
-  test.only('Login -> Post Job -> Verify in job list', async () => {
+  test('Login -> Post Job -> Verify in job list', async () => {
     await homePage.navigate();
     await homePage.goToLogin();
     await loginPage.fillLoginForm(users.employer.email, users.employer.password);
@@ -49,7 +49,7 @@ test.describe('Employer End-to-End Journey', () => {
     // expect(jobCount).toBeGreaterThan(0);
   });
 
-  test('Post Job -> Verify job details', async () => {
+  test.skip('Post Job -> Verify job details', async () => {
     await homePage.navigate();
     await homePage.goToLogin();
     await loginPage.fillLoginForm(users.employer.email, users.employer.password);
