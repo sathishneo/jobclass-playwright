@@ -1,6 +1,13 @@
-
 pipeline {
     agent any
+
+    parameters {
+        choice(
+            name: 'TEST_SUITE',
+            choices: ['Smoke', 'Regression', 'Sanity'],
+            description: 'Select Test Suite'
+        )
+    }
 
     stages {
 
@@ -16,7 +23,7 @@ pipeline {
             }
         }
 
-        stage('Install Playwright Browsers') {
+        stage('Install Browsers') {
             steps {
                 bat 'npx playwright install'
             }
@@ -24,7 +31,19 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                bat 'npx playwright test'
+                script {
+                    if (params.TEST_SUITE == 'Smoke') {
+                        bat 'npx playwright test --grep @smoke'
+                    }
+
+                    if (params.TEST_SUITE == 'Regression') {
+                        bat 'npx playwright test --grep @regression'
+                    }
+
+                    if (params.TEST_SUITE == 'Sanity') {
+                        bat 'npx playwright test --grep @sanity'
+                    }
+                }
             }
         }
     }

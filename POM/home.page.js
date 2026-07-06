@@ -13,7 +13,7 @@ class HomePage {
   }
 
   async navigate() {
-    await this.page.goto('http://202.83.16.221:9003/');
+    await this.page.goto('/');
     await this.page.waitForLoadState('networkidle');
   }
 

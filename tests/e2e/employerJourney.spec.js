@@ -6,7 +6,11 @@ import AccountPage from '../../POM/account.page.js';
 import JobListPage from '../../POM/jobList.page.js';
 import users from '../../testData/users.json' assert { type: 'json' };
 import jobs from '../../testData/jobs.json' assert { type: 'json' };
+import path from 'path';
 
+test.use({
+  storageState: './auth/JobSeeker.auth.json'
+});
 test.describe('Employer End-to-End Journey', () => {
   let homePage, loginPage, postJobPage, accountPage, jobListPage;
 
@@ -34,10 +38,10 @@ test.describe('Employer End-to-End Journey', () => {
   });
 
   test('Login -> Post Job -> Verify in job list', async () => {
-    await homePage.navigate();
-    await homePage.goToLogin();
-    await loginPage.fillLoginForm(users.employer.email, users.employer.password);
-    await loginPage.submit();
+    // await homePage.navigate();
+    // await homePage.goToLogin();
+    // await loginPage.fillLoginForm(users.employer.email, users.employer.password);
+    // await loginPage.submit();
     
     await homePage.goToPostJob();
     await postJobPage.fillJobForm(jobs.validJob);
